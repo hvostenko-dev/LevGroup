@@ -1,54 +1,67 @@
-# React + TypeScript + Vite
+Lila
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web application built with React and Vite, designed to deliver clean visuals, smooth performance, and scalable front-end architecture. It emphasizes clarity, modularity, and responsiveness — blending functional design with clean engineering.
 
-Currently, two official plugins are available:
+Overview
+Lila showcases a refined front-end approach that merges design and technology.
+Key highlights:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Responsive layout for desktop and mobile
 
-## Expanding the ESLint configuration
+Fast performance with Vite bundling
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Modular and maintainable code
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Seamless deployment on Vercel
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Tech Stack
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+React — component-based structure and hooks
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Vite — fast builds and efficient development
+
+CSS / Tailwind / Styled Components — clean, flexible styling
+
+JavaScript / TypeScript — logic and readability
+
+Vercel — smooth CI/CD and hosting
+
+Features
+
+Fully responsive design
+
+Optimized loading and transitions
+
+Component-driven architecture
+
+Lightweight performance-focused setup
+
+Readable and scalable codebase
+
+Philosophy
+Lila was created to reflect the idea that front-end work can be both beautiful and functional.
+Every element — from component structure to typography — aims to serve the experience, not just the interface.
+
+Getting Started
+
+Clone the repository
+git clone https://github.com/ilyajavadeveloper/Lila.git
+
+Navigate into the project folder
+cd Lila
+
+Install dependencies
+npm install
+
+Start the dev server
+npm run dev
+Then open http://localhost:5173
+ in your browser.
+
+Project Structure
+src/
+├── components/ — Reusable UI components
+├── pages/ — Main views (Home, About, etc.)
+├── assets/ — Images, icons, fonts
+├── styles/ — Global and theme styles
+└── main.jsx — Application entry point
