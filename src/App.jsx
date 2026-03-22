@@ -11,7 +11,7 @@ import CookieConsent from "./components/CookiesConsent.jsx";
 export default function App() {
   return (
     <div className="App">
-      <LanguageSwitcher />
+      {/*<LanguageSwitcher />*/}
       <HeroSection />
       <ServicesSection />
       <ContactSection />
