@@ -84,7 +84,7 @@ LevGroup/
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/ilyajavadeveloper/LevGroup.git
+git clone https://github.com/hvostenko-dev/LevGroup.git
 
 # 2. Navigate to the project directory
 cd LevGroup
@@ -109,4 +109,4 @@ npm run dev
 
 ## 👤 Author
 
-**Ilya** — [@ilyajavadeveloper](https://github.com/ilyajavadeveloper)
+**Ilya** — [@hvostenko-dev](https://github.com/hvostenko-dev)
