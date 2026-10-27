@@ -1,31 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap');
+:root {
+  --teal-deep: #04242a;
+  --teal-dark: #00444e;
+  --teal-mid: #1d5760;
+  --gold-primary: #e1a873;
+  --gold-light: #ffebc2;
+  --cream: #f5e3c1;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Assistant', sans-serif;
-  color: white;
-  background: linear-gradient(115deg, #00444E 0%, #2D6168 53%, #E1A873 100%);
-  background-attachment: fixed;
-  background-size: cover;
+  font-family: 'Manrope', 'Assistant', sans-serif;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--teal-deep) 0%, var(--teal-dark) 55%, var(--teal-mid) 100%);
   min-height: 100vh;
   overflow-x: hidden;
-
-  /* Блокируем горизонтальные жесты, оставляем вертикальный скролл */
-  touch-action: pan-y;
-  /* Опционально — запрет выделения и перетаскивания */
-  user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  -webkit-user-drag: none;
-  user-drag: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.services,
-.hero {
-  background-attachment: fixed;
-  background-position: center center;
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
-  /* Тоже запрещаем горизонтальные свайпы */
-  touch-action: pan-y;
+main {
+  flex: 1;
 }

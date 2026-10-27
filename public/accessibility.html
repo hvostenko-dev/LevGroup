@@ -2,105 +2,158 @@
 <html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>מדיניות פרטיות - LEV GROUP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>הצהרת נגישות – LEV GROUP</title>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap"
+    rel="stylesheet"
+  />
   <style>
-    body {
-      font-family: Arial, "Heebo", sans-serif;
-      max-width: 900px;
-      margin: 40px auto;
-      line-height: 1.8;
-      padding: 0 16px;
-      color: #1f2a32;
-      background: #f9fafb;
+    :root {
+      --teal-dark: #07282e;
+      --teal-main: #00444e;
+      --gold: #e1a873;
+      --cream: #f5e3c1;
     }
-    h1,h2,h3 { color: #1f2a32; }
-    h1 { font-size: 28px; margin-bottom: 20px; }
-    h2 { font-size: 22px; margin-top: 28px; }
-    h3 { font-size: 18px; margin-top: 18px; }
-    p, li { font-size: 16px; }
-    a { color: #0a7ea4; text-decoration: underline; }
-    ul { margin: 12px 0 12px 20px; }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Assistant", Arial, sans-serif;
+      margin: 0;
+      padding: 40px 16px;
+      line-height: 1.75;
+      color: #f3f7f8;
+      background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal-main) 100%);
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(225, 168, 115, 0.25);
+      border-radius: 20px;
+      padding: clamp(24px, 5vw, 48px);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 700;
+      margin-bottom: 24px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(225, 168, 115, 0.4);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .back-link:hover {
+      background: rgba(225, 168, 115, 0.15);
+      transform: translateY(-1px);
+    }
+    h1, h2, h3 {
+      color: var(--cream);
+      margin-top: 0;
+    }
+    h1 {
+      font-size: clamp(26px, 4vw, 36px);
+      border-bottom: 1px solid rgba(225, 168, 115, 0.25);
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+    }
+    h2 {
+      font-size: 22px;
+      margin-top: 28px;
+      margin-bottom: 12px;
+      color: var(--gold);
+    }
+    p, li {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    a {
+      color: var(--gold);
+      text-decoration: underline;
+    }
+    ul {
+      margin: 12px 0;
+      padding-right: 22px;
+    }
     .note {
-      background: #fff8e6;
-      border: 1px solid #ffe6a0;
-      padding: 12px;
-      border-radius: 8px;
-      margin: 16px 0;
+      background: rgba(225, 168, 115, 0.12);
+      border: 1px solid rgba(225, 168, 115, 0.35);
+      padding: 16px;
+      border-radius: 12px;
+      margin: 24px 0;
     }
     footer {
-      margin-top: 40px;
+      margin-top: 36px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
       font-size: 14px;
-      color: #5c7682;
+      color: rgba(255, 255, 255, 0.65);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
     }
   </style>
 </head>
 <body>
-  <h1>מדיניות פרטיות – LEV GROUP</h1>
+  <main class="container">
+    <a href="/" class="back-link">→ חזרה לאתר הראשי | Back to Website</a>
 
-  <p>
-    אנו ב-LEV GROUP מחויבים לשמירה על פרטיות המשתמשים באתר זה. מטרת מסמך זה היא להסביר כיצד אנו
-    אוספים מידע, באילו מטרות אנו משתמשים בו, לאיזה גורמים הוא עשוי להימסר ומהן זכויותיך כמשתמש/ת.
-    השימוש באתר מהווה הסכמה למדיניות זו.
-  </p>
+    <h1>הצהרת נגישות – LEV GROUP</h1>
 
-  <h2>מידע שנאסף</h2>
-  <ul>
-    <li><strong>מידע טכני:</strong> כתובת IP, סוג דפדפן, מערכת הפעלה, זמן שימוש באתר, עמודים בהם ביקרת.</li>
-    <li><strong>מידע סטטיסטי:</strong> נתוני גלישה אנונימיים לצורך שיפור חוויית המשתמש ותוכן האתר.</li>
-    <li><strong>מידע הנמסר מרצונך:</strong> פרטי קשר שמסרת בטפסים כגון שם, טלפון ודוא"ל.</li>
-    <li><strong>עוגיות (Cookies):</strong> קבצי טקסט קטנים הנשמרים בדפדפן לצורך שמירה על העדפות, שפה מועדפת,
-      התאמת חוויית המשתמש ואיסוף סטטיסטיקה.</li>
-  </ul>
+    <p>
+      חברת <strong>LEV GROUP</strong> רואה חשיבות עליונה בהנגשת שירותיה ואתר האינטרנט שלה לאנשים עם מוגבלות,
+      מתוך אמונה בשוויון הזדמנויות ומתן שירות מכבד, עצמאי ונגיש לכלל הציבור.
+    </p>
 
-  <h2>מטרות השימוש במידע</h2>
-  <ul>
-    <li>מתן מענה לפניותיך ושיפור השירותים.</li>
-    <li>התאמת האתר להעדפותיך האישיות.</li>
-    <li>ניתוח נתונים לשם שיפור חוויית המשתמש.</li>
-    <li>שמירה על אבטחת האתר ועמידה בהוראות הדין.</li>
-  </ul>
+    <h2>נגישות אתר האינטרנט</h2>
+    <p>
+      אתר זה הותאם לדרישות תקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע"ג-2013,
+      ולתקן הישראלי ת"י 5568 המבוסס על הנחיות <strong>WCAG 2.1 ברמת AA</strong>.
+    </p>
+    <ul>
+      <li><strong>תמיכה במקלדת:</strong> ניתן לנווט בכל רכיבי האתר והתפריטים באמצעות המקלדת (מקשי Tab, Enter ו-Escape).</li>
+      <li><strong>תמיכה בקוראי מסך:</strong> האתר עושה שימוש בתגיות סמנטיות (HTML5) ובתכונות ARIA תקניות.</li>
+      <li><strong>תמיכה רב-לשונית ו-RTL/LTR:</strong> התאמה אוטומטית של כיוון הקריאה (ימין-לשמאל בעברית, שמאל-לימין באנגלית, צרפתית ורוסית).</li>
+      <li><strong>תפריט נגישות (UserWay):</strong> באתר מוטמע תפריט נגישות המאפשר הגדלת טקסט, שינוי ניגודיות, הדגשת קישורים ועצירת אנימציות.</li>
+      <li><strong>עיצוב רספונסיבי:</strong> האתר מותאם לצפייה במחשבים נייחים, טאבלטים וטלפונים חכמים.</li>
+    </ul>
 
-  <h2>ניהול עוגיות</h2>
-  <p>
-    באפשרותך למחוק או לחסום עוגיות (Cookies) באמצעות הגדרות הדפדפן. עם זאת, חסימת עוגיות עשויה לגרום
-    לפגיעה בחלק מהפונקציות באתר. בהסכמתך לשימוש בעוגיות אתה מאפשר לנו לספק שירות איכותי ומותאם.
-  </p>
+    <h2>הסדרי נגישות במשרדי החברה</h2>
+    <ul>
+      <li><strong>כתובת המשרד:</strong> שדרות ירושלים 18, מגדלי K (K Towers), אשדוד.</li>
+      <li><strong>חניה נגישה:</strong> קיימות חניות נכים בחניון המגדל ובסביבתו הקרובה.</li>
+      <li><strong>דרכי גישה ומעליות:</strong> קיימת כניסה נגישה ללא מדרגות ומעליות מונגשות לקומות המשרדים.</li>
+      <li><strong>שירותים נגישים:</strong> קיימים תאי שירותים נגישים במבנה.</li>
+      <li><strong>ערוצי שירות חלופיים:</strong> ניתן לקבל שירות מלא באמצעות הטלפון, ה-WhatsApp או הדואר האלקטרוני ללא צורך בהגעה פיזית.</li>
+    </ul>
 
-  <h2>מסירת מידע לצדדים שלישיים</h2>
-  <p>
-    אנו לא מוכרים מידע אישי לצדדים שלישיים. ייתכן ונעביר מידע לספקי שירות המסייעים לנו בתפעול האתר
-    (כגון אחסון, אבטחת מידע, אנליטיקה), וזאת אך ורק לצורך שנאסף ובכפוף להסכמים מתאימים.
-  </p>
+    <h2>פניות ובקשות בנושא נגישות</h2>
+    <p>
+      אנו ממשיכים להשקיע מאמצים בשיפור נגישות האתר והשירות. אם נתקלתם בקושי בגלישה באתר או שיש לכם הצעה לשיפור,
+      נשמח לעמוד לרשותכם:
+    </p>
+    <div class="note">
+      <strong>פרטי קשר בנושא נגישות – LEV GROUP:</strong><br />
+      טלפון / WhatsApp: <a href="tel:+972524388967">052-438-8967</a><br />
+      דוא"ל: <a href="mailto:levgroup.m@gmail.com">levgroup.m@gmail.com</a><br />
+      כתובת: שדרות ירושלים 18, מגדלי K, אשדוד
+    </div>
 
-  <h2>שמירת מידע ואבטחתו</h2>
-  <p>
-    אנו נוקטים באמצעי אבטחה סבירים כדי להגן על המידע האישי שלך. המידע נשמר לפרקי זמן הנדרשים
-    למטרות לשמן נאסף או על פי דרישות הדין.
-  </p>
-
-  <h2>זכויותיך</h2>
-  <ul>
-    <li>הזכות לעיין במידע שנאסף אודותיך.</li>
-    <li>הזכות לבקש תיקון או מחיקה של מידע אישי.</li>
-    <li>הזכות להתנגד לשימוש מסוים במידע.</li>
-    <li>הזכות למשוך הסכמה לעיבוד מידע בכל עת.</li>
-  </ul>
-
-  <h2>יצירת קשר</h2>
-  <p>
-    לשאלות, בירורים או בקשות הנוגעות למדיניות פרטיות זו ניתן לפנות אלינו:
-    <br/>
-    טלפון: <a href="tel:+972524388967">052-438-8967</a><br/>
-    דוא"ל: <a href="mailto:levgroup.m@gmail.com">levgroup.m@gmail.com</a>
-  </p>
-
-  <div class="note">
-    מסמך זה נכתב בניסוח כללי ואינו מהווה ייעוץ משפטי. במקרה של סתירה בין האמור במסמך זה לבין הוראות הדין – הוראות הדין הן הקובעות.
-  </div>
-
-  <footer>
-    עודכן לאחרונה: אוגוסט 2025
-  </footer>
+    <footer>
+      <span>© LEV GROUP – כל הזכויות שמורות</span>
+      <span><a href="/privacy.html">מדיניות פרטיות</a></span>
+    </footer>
+  </main>
 </body>
 </html>

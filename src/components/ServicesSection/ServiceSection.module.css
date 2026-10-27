@@ -1,138 +1,65 @@
 .services {
   position: relative;
   z-index: 2;
-  padding: 110px 20px 70px 20px;
-  text-align: center;
+  padding: clamp(64px, 9vw, 110px) clamp(16px, 4vw, 48px);
   color: #f5e3c1;
-  background: linear-gradient(109deg, #00444E 0%, #2D6168 59%, #13535c 100%);
+  background: linear-gradient(
+    180deg,
+    #04242a 0%,
+    #07353d 50%,
+    #052930 100%
+  );
   overflow: hidden;
 }
 
-.services::before {
-  content: "";
-  position: absolute;
-  left: 0; top: 0; right: 0;
-  height: 80px;
-  z-index: 1;
-  background: linear-gradient(
-    to bottom,
-    rgba(245, 227, 193, 0.13) 0%,
-    rgba(0,68,78, 0.17) 40%,
-    rgba(0,0,0,0.00) 100%
-  );
-  pointer-events: none;
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
 }
 
-.services::after {
-  content: "";
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  height: 55px;
-  z-index: 1;
-  background: linear-gradient(
-    to top,
-    rgba(225,168,115, 0.05) 0%,
-    rgba(45,97,104, 0.09) 55%,
-    rgba(0,0,0,0.00) 100%
-  );
-  pointer-events: none;
-}
-
-/* === ГЛАВНЫЙ ЯРКИЙ ЗАГОЛОВОК === */
-.bigTitle {
-
-  font-size: clamp(3.6rem, 8vw, 6.1rem);
-  font-weight: 900;
-  margin-bottom: 2.9rem;
-  letter-spacing: 0.19em;
-  text-transform: uppercase;
-  font-family: 'Manrope', 'Assistant', sans-serif;
-  line-height: 1.07;
+.header {
   text-align: center;
-  user-select: none;
-  position: relative;
-  z-index: 2;
-  text-shadow:
-    0 8px 46px #e1a87345,
-    0 4px 20px #00444e70;
-   
+  max-width: 720px;
+  margin: 0 auto clamp(40px, 6vw, 64px);
 }
 
-.gradientText {
+.badge {
   display: inline-block;
-  background: linear-gradient(92deg, #FFEBC2 0%, #E1A873 35%, #FFF4DD 65%, #E1A873 100%);
-  background-size: 320% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-  animation: shine 5s linear infinite;
-  filter: brightness(1.12) drop-shadow(0 3px 15px #e1a8732c);
-}
-
-@keyframes shine {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
-}
-
-/* ==== СТАНДАРТНЫЙ ТЕКСТ ==== */
-.title {
-  font-size: 2.85rem;
-  font-weight: 900;
-  margin-bottom: 2.6rem;
-  color: #F5E3C1;
-  text-shadow: 0 3px 14px rgba(40,54,54,0.14);
-  letter-spacing: 2.2px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: rgba(225, 168, 115, 0.14);
+  border: 1px solid rgba(225, 168, 115, 0.35);
+  color: #e1a873;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-family: 'Manrope', 'Assistant', sans-serif;
-  line-height: 1.12;
-  position: relative;
-  z-index: 2;
+  margin-bottom: 14px;
 }
 
-/* === GRID === */
+.title {
+  font-size: clamp(2rem, 4.2vw, 3rem);
+  font-weight: 800;
+  margin: 0 0 14px;
+  color: #ffffff;
+  letter-spacing: 0.03em;
+  font-family: 'Manrope', 'Assistant', sans-serif;
+  line-height: 1.15;
+}
+
+.subtitle {
+  font-size: clamp(0.98rem, 1.8vw, 1.14rem);
+  line-height: 1.6;
+  color: rgba(245, 227, 193, 0.82);
+  margin: 0;
+}
+
 .grid {
   display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  position: relative;
-  z-index: 2;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
 }
 
-/* === КАРТОЧКИ === */
-.card {
-  background: rgba(255,255,255,0.09);
-  box-shadow: 0 6px 32px rgba(0,0,0,0.09);
-  border-radius: 18px;
-  padding: 32px 22px;
+.gridItem {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: none;
-}
-
-.cardTitle {
-  color: #00444E;
-  font-weight: 700;
-  font-size: 1.2rem;
-  letter-spacing: 1.2px;
-  margin-top: 18px;
-  margin-bottom: 0;
-  text-transform: uppercase;
-  font-family: 'Manrope', 'Assistant', sans-serif;
-}
-
-/* === АДАПТИВНОСТЬ === */
-@media (max-width: 1000px) {
-  .bigTitle { font-size: 2.55rem; }
-  .title { font-size: 2.2rem; }
-}
-@media (max-width: 700px) {
-  .bigTitle { font-size: 1.55rem; }
-  .title { font-size: 1.35rem; }
-  .card { padding: 18px 8px; }
-}
-@media (max-width: 500px) {
-  .bigTitle { font-size: 1.08rem; }
-  .title { font-size: 1.1rem; }
 }

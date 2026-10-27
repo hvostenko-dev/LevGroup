@@ -1,14 +1,30 @@
-import styles from '../ServiceCard/ServiceCard.module.css'
+import styles from './ServiceCard.module.css';
 
-
-export default function ServiceCard({ title, icon: Icon }) {
+export default function ServiceCard({
+  title,
+  description,
+  icon: Icon,
+  ctaLabel,
+  onSelect,
+}) {
   return (
-    
-    <div className={styles.card}>
+    <article className={styles.card}>
       <div className={styles.iconWrapper}>
-        <Icon className={styles.icon} />
+        <Icon className={styles.icon} aria-hidden="true" />
       </div>
+
       <h3 className={styles.title}>{title}</h3>
-    </div>
+
+      {description && <p className={styles.description}>{description}</p>}
+
+      {ctaLabel && (
+        <button type="button" className={styles.cardAction} onClick={onSelect}>
+          <span>{ctaLabel}</span>
+          <span className={styles.arrow} aria-hidden="true">
+            →
+          </span>
+        </button>
+      )}
+    </article>
   );
 }

@@ -2,17 +2,125 @@
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
   width: 100%;
-  background: rgba(0, 68, 78, 0.9);
-  padding: 12px 24px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
   z-index: 1000;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  padding: 14px clamp(16px, 4vw, 48px);
+  background: rgba(4, 36, 42, 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
 }
 
-  .logo {
-    height: 50px;
+.scrolled {
+  padding: 10px clamp(16px, 4vw, 48px);
+  background: rgba(4, 36, 42, 0.88);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.28);
+  border-bottom-color: rgba(225, 168, 115, 0.22);
+}
+
+.inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  letter-spacing: 0.12em;
+  direction: ltr;
+}
+
+.brandMark {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ffebc2, #e1a873);
+  box-shadow: 0 0 12px rgba(225, 168, 115, 0.8);
+}
+
+.brandText {
+  background: linear-gradient(90deg, #ffffff 0%, #f5e3c1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 32px);
+}
+
+.navLink {
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.96rem;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.navLink:hover,
+.navLink:focus-visible {
+  color: #ffebc2;
+  background: rgba(225, 168, 115, 0.12);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.whatsappBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #e1a873 0%, #c88a51 100%);
+  color: #04242a;
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(225, 168, 115, 0.28);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  white-space: nowrap;
+}
+
+.whatsappBtn:hover,
+.whatsappBtn:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(225, 168, 115, 0.42);
+  filter: brightness(1.05);
+}
+
+.whatsappIcon {
+  font-size: 1.15rem;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none;
   }
-  
+
+  .whatsappText {
+    display: none;
+  }
+
+  .whatsappBtn {
+    padding: 9px 11px;
+  }
+}

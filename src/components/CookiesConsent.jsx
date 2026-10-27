@@ -1,47 +1,72 @@
-// src/components/CookieConsent.jsx
-import React, { useState, useEffect } from "react";
-import styles from "../components/CookiesConsent.module.css";
+import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import styles from './CookiesConsent.module.css';
 
 export default function CookieConsent() {
+  const { t } = useTranslation();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const choice = localStorage.getItem("cookieConsent");
-    if (!choice) {
+    try {
+      const choice = localStorage.getItem('cookieConsent');
+      if (!choice) {
+        setVisible(true);
+      }
+    } catch {
       setVisible(true);
-
-      // авто-закрытие через 10 секунд
-      const timer = setTimeout(() => {
-        localStorage.setItem("cookieConsent", "auto-closed");
-        setVisible(false);
-      }, 10000);
-
-      return () => clearTimeout(timer);
     }
   }, []);
 
   const accept = () => {
-    localStorage.setItem("cookieConsent", "accepted");
+    try {
+      localStorage.setItem('cookieConsent', 'accepted');
+    } catch {
+      // Ignore storage errors
+    }
     setVisible(false);
   };
 
   const decline = () => {
-    localStorage.setItem("cookieConsent", "declined");
+    try {
+      localStorage.setItem('cookieConsent', 'declined');
+    } catch {
+      // Ignore storage errors
+    }
     setVisible(false);
   };
 
   if (!visible) return null;
 
   return (
-    <div className={styles.banner}>
+    <div
+      className={styles.banner}
+      role="region"
+      aria-label="Cookie Consent"
+      aria-live="polite"
+    >
       <span className={styles.text}>
-        אנו משתמשים בעוגיות (Cookies) כדי לשפר את חווית המשתמש באתר.  
-        לפרטים נוספים קרא את{" "}
-        <a href="/privacy.html" className={styles.link}>מדיניות הפרטיות</a>.
+        {t('cookies.text')}{' '}
+        <a
+          href="/privacy.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.link}
+        >
+          {t('cookies.privacyLink')}
+        </a>
+        .
       </span>
       <div className={styles.actions}>
-        <button onClick={accept} className={styles.buttonAccept}>אישור</button>
-        <button onClick={decline} className={styles.buttonDecline}>סירוב</button>
+        <button type="button" onClick={accept} className={styles.buttonAccept}>
+          {t('cookies.accept')}
+        </button>
+        <button
+          type="button"
+          onClick={decline}
+          className={styles.buttonDecline}
+        >
+          {t('cookies.decline')}
+        </button>
       </div>
     </div>
   );

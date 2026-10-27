@@ -1,84 +1,127 @@
-/* src/components/LanguageSwitcher.module.css */
 .switcher {
-  position: fixed;
-  top: 16px;
-  left: 16px;
-  z-index: 99999; /* максимально выше, чтобы не перекрывалось */
+  position: relative;
+  z-index: 1010;
 }
 
 .toggle {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  background: rgba(0,68,78,0.37);
-  color: #fff;
-  border: none;
-  padding: 7px 17px 7px 13px;
-  border-radius: 16px;
-  font-size: 1.04rem;
+  gap: 7px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border: 1px solid rgba(225, 168, 115, 0.35);
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.92rem;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
-  transition: background 0.19s, color 0.14s;
-  backdrop-filter: blur(2px);
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
+
 .toggle:hover,
-.toggle:focus {
-  background: #E1A873;
-  color: #00444E;
+.toggle:focus-visible {
+  background: rgba(225, 168, 115, 0.18);
+  border-color: #e1a873;
+  color: #ffebc2;
+}
+
+.globeIcon {
+  font-size: 1rem;
+  color: #e1a873;
+}
+
+.labelShort {
+  display: none;
+}
+
+.chevron {
+  font-size: 0.72rem;
+  opacity: 0.8;
+  transition: transform 0.2s ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
 }
 
 .menu {
   position: absolute;
-  top: 120%;
-  left: 0;
-  min-width: 122px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 6px 22px rgba(0,0,0,0.16);
-  padding: 4px 0;
+  top: calc(100% + 8px);
+  inset-inline-end: 0;
+  min-width: 150px;
+  background: #072c33;
+  border: 1px solid rgba(225, 168, 115, 0.35);
+  border-radius: 14px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
+  padding: 6px;
   margin: 0;
   list-style: none;
-  animation: fadeIn 0.18s;
-}
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0);  }
+  animation: fadeIn 0.16s ease-out;
 }
 
-.menu li { width: 100%; }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menu li {
+  width: 100%;
+}
+
 .menu button {
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
   background: none;
   border: none;
-  color: #00444E;
-  font-size: 1rem;
-  padding: 8px 18px;
-  text-align: left;
+  border-radius: 9px;
+  color: #f5e3c1;
+  font-family: inherit;
+  font-size: 0.92rem;
+  padding: 8px 12px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.13s, color 0.11s;
+  transition: background 0.15s ease, color 0.15s ease;
 }
+
 .menu button:hover,
-.menu button:focus {
-  background: #E1A873;
-  color: #222;
+.menu button:focus-visible {
+  background: rgba(225, 168, 115, 0.18);
+  color: #ffffff;
 }
+
 .menu .active {
-  background: #00444E;
-  color: #fff;
+  background: linear-gradient(135deg, #e1a873 0%, #c88a51 100%);
+  color: #04242a;
+  font-weight: 800;
   cursor: default;
 }
 
-@media (max-width: 700px) {
-  .switcher {
-    top: 10px;
-    left: 10px;
+.langCode {
+  font-size: 0.75rem;
+  opacity: 0.75;
+  font-weight: 700;
+}
+
+@media (max-width: 520px) {
+  .labelFull {
+    display: none;
   }
+
+  .labelShort {
+    display: inline;
+  }
+
   .toggle {
-    padding: 6px 14px;
-    font-size: 0.97rem;
-  }
-  .menu {
-    min-width: 96px;
+    padding: 7px 11px;
   }
 }

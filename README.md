@@ -3,7 +3,7 @@
 [![React](https://img.shields.io/badge/React-19.1-61DAFB?logo=react&logoColor=white)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-6.3-646CFF?logo=vite&logoColor=white)](https://vite.dev/)
 [![Framer Motion](https://img.shields.io/badge/Framer_Motion-12-0055FF?logo=framer&logoColor=white)](https://www.framer.com/motion/)
-[![i18next](https://img.shields.io/badge/i18next-Multilingual-26A69A?logo=i18next&logoColor=white)](https://www.i18next.com/)
+[![i18next](https://img.shields.io/badge/i18next-Multilingual_%26_RTL-26A69A?logo=i18next&logoColor=white)](https://www.i18next.com/)
 [![Live Demo](https://img.shields.io/badge/Live_Demo-Vercel-000000?logo=vercel&logoColor=white)](https://lev-group.vercel.app/)
 
 A multilingual corporate landing page for **LEV GROUP**, a real estate, building maintenance, and facility management company operating in Southern Israel (Ashdod).
@@ -14,15 +14,15 @@ A multilingual corporate landing page for **LEV GROUP**, a real estate, building
 
 ## ✨ Key Features
 
-- **Multilingual Support (`i18next` & `react-i18next`)** — Instant client-side language switching across 4 languages:
-  - 🇮🇱 **Hebrew (`he`)** — Default language
-  - 🇬🇧 **English (`en`)**
-  - 🇫🇷 **French (`fr`)**
-  - 🇷🇺 **Russian (`ru`)**
-- **Smooth Scroll & Entrance Animations (`framer-motion`)** — Animated hero entrance, staggered service cards, and viewport-triggered contact reveals.
-- **Comprehensive Facility Services Showcase (`ServicesSection`)** — Interactive grid covering Gardening, Security, Renovation, Cleaning, Investments, Billing, and Ambient Scenting with `react-icons`.
-- **Direct WhatsApp & Social Channels (`HeroSection` & `ContactSection`)** — One-click WhatsApp contact (`+972 52-438-8967`), direct phone/email links, Google Maps location link (K Towers, Ashdod), Facebook, and Instagram.
-- **SEO & Accessibility Ready** — Includes Open Graph / Twitter meta tags, JSON-LD `LocalBusiness` structured data schema, UserWay Accessibility Widget integration, a dedicated Hebrew Accessibility Declaration (`/accessibility.html`), and `localStorage`-persisted Cookie Consent management.
+- **Multilingual Support with Automatic RTL/LTR Switching (`i18next` & `react-i18next`)** — Instant client-side language switching persisted in `localStorage`, dynamically syncing `<html lang="..." dir="rtl|ltr">` across 4 languages:
+  - 🇮🇱 **Hebrew (`he`, `RTL`)** — Default language
+  - 🇬🇧 **English (`en`, `LTR`)**
+  - 🇫🇷 **French (`fr`, `LTR`)**
+  - 🇷🇺 **Russian (`ru`, `LTR`)**
+- **Sticky Glassmorphic Header (`Header`)** — Smooth-scroll section navigation, accessible keyboard-friendly `LanguageSwitcher` (`Escape` key, ARIA listbox), and quick WhatsApp action.
+- **Comprehensive 360° Facility Services Grid (`ServicesSection` & `ServiceCard`)** — 8 core services (Building Systems, Premium Cleaning, Landscaping & Gardening, Security & Monitoring, Renovation & Upgrades, Billing & Accounting, Property & Investments, Ambient Scenting) with localized descriptions and one-click service pre-selection into the inquiry form.
+- **Interactive Consultation & Inquiry Form (`ContactSection`)** — Validated contact form that pre-fills from selected service cards and dispatches structured inquiries directly via WhatsApp or Email, alongside K Towers Ashdod office details, working hours, and social links.
+- **SEO, Structured Data & Accessibility (`WCAG 2.1 AA` / `IS 5568`)** — Includes Open Graph / Twitter meta tags, JSON-LD `LocalBusiness` schema, UserWay Accessibility Widget integration, dedicated Accessibility Declaration (`/accessibility.html`) and Privacy Policy (`/privacy.html`), and localized Cookie Consent management (`CookiesConsent`).
 
 ---
 
@@ -34,7 +34,8 @@ A multilingual corporate landing page for **LEV GROUP**, a real estate, building
 | **Build Tool** | [Vite 6](https://vite.dev/) |
 | **Animations** | [Framer Motion 12](https://www.framer.com/motion/) |
 | **Internationalization (i18n)** | [i18next](https://www.i18next.com/) & [react-i18next](https://react.i18next.com/) |
-| **Styling & Icons** | Scoped CSS Modules (`*.module.css`), [React Icons](https://react-icons.github.io/react-icons/), Google Fonts (`Manrope`, `@fontsource/anton`) |
+| **Styling & Icons** | Scoped CSS Modules (`*.module.css`), [React Icons](https://react-icons.github.io/react-icons/), Google Fonts (`Manrope`, `Assistant`) |
+| **Code Quality** | [ESLint 9](https://eslint.org/) (Flat Config with `react-hooks` & `react-refresh`) |
 | **Deployment** | [Vercel](https://vercel.com/) |
 
 ---
@@ -44,27 +45,28 @@ A multilingual corporate landing page for **LEV GROUP**, a real estate, building
 ```text
 LevGroup/
 ├── public/
-│   ├── images/                      # Public static media & backgrounds
-│   ├── accessibility.html           # Accessibility declaration page (Hebrew)
+│   ├── images/                      # Public static media (Ashdod hero backdrop & brand logo mask)
+│   ├── accessibility.html           # Accessibility declaration page (IS 5568 / WCAG 2.1 AA)
+│   ├── privacy.html                 # Privacy & cookie policy page
 │   └── favicon.png
 ├── src/
 │   ├── components/
-│   │   ├── LanguageSwitcher/        # Multi-language selector (HE / EN / FR / RU)
-│   │   ├── HeroSection/             # Animated hero banner, custom SVG logo & WhatsApp CTA
-│   │   ├── ServicesSection/         # Animated grid of property management services
-│   │   ├── ServiceCard/             # Individual service card with icon & localized title
-│   │   ├── ContactSection/          # Contact links, address, socials & accessibility link
-│   │   ├── Header/                  # Header component & styles
-│   │   └── CookiesConsent.jsx       # Cookie consent banner with localStorage persistence
+│   │   ├── Header/                  # Sticky glassmorphic navbar with navigation & CTA
+│   │   ├── LanguageSwitcher/        # Accessible language selector (HE / EN / FR / RU)
+│   │   ├── HeroSection/             # Animated hero banner, KPI metrics bar & CTAs
+│   │   ├── ServicesSection/         # Animated 8-card grid of property management services
+│   │   ├── ServiceCard/             # Service card with icon, description & inquiry trigger
+│   │   ├── ContactSection/          # Office details, socials & interactive consultation form
+│   │   └── CookiesConsent.jsx       # Localized cookie consent banner with localStorage persistence
 │   ├── data/
-│   │   └── services.js              # Service definitions with localized titles & icons
-│   ├── locales/                     # Translation dictionaries (en.json, he.json, fr.json, ru.json)
-│   ├── App.jsx                      # Root application component
-│   ├── App.css                      # Global styles
-│   ├── i18n.js                      # i18next initialization & language configuration
+│   │   └── services.js              # 8 facility services with localized titles, descriptions & icons
+│   ├── locales/                     # Translation dictionaries (he.json, en.json, fr.json, ru.json)
+│   ├── App.jsx                      # Root application component & service selection state
+│   ├── App.css                      # Global theme variables & base reset
+│   ├── i18n.js                      # i18next setup, localStorage persistence & RTL/LTR DOM sync
 │   └── main.jsx                     # React DOM entrypoint
 ├── index.html                       # SEO meta tags, JSON-LD LocalBusiness schema & UserWay widget
-├── eslint.config.js                 # ESLint configuration
+├── eslint.config.js                 # ESLint 9 flat configuration
 ├── vite.config.js                   # Vite configuration
 └── package.json
 ```
@@ -99,7 +101,8 @@ npm run dev
 | Command | Description |
 | :--- | :--- |
 | `npm run dev` | Starts the local development server with Hot Module Replacement (HMR) |
-| `npm run build` | Builds the production bundle into `dist/` |
+| `npm run build` | Builds the optimized production bundle into `dist/` |
+| `npm run lint` | Runs ESLint static analysis across all `.js` and `.jsx` files |
 | `npm run preview` | Locally previews the production build |
 
 ---
