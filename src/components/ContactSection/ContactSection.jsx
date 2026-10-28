@@ -11,6 +11,8 @@ import {
   FaInstagram,
   FaUniversalAccess,
   FaShieldAlt,
+  FaCookieBite,
+  FaExternalLinkAlt,
 } from 'react-icons/fa';
 import services from '../../data/services';
 import styles from './ContactSection.module.css';
