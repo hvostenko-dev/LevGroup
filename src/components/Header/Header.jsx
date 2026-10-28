@@ -2,9 +2,10 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaWhatsapp } from 'react-icons/fa';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
+import AccessibilityButton from '../Accessibility/AccessibilityButton';
 import styles from './Header.module.css';
 
-export default function Header() {
+export default function Header({ onOpenA11y }) {
   const { t } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
 
@@ -45,6 +46,7 @@ export default function Header() {
         </nav>
 
         <div className={styles.actions}>
+          <AccessibilityButton onClick={onOpenA11y} />
           <LanguageSwitcher />
           <a
             href="https://wa.me/972524388967"

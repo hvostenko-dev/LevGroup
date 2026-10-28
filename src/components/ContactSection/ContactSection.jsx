@@ -15,7 +15,7 @@ import {
 import services from '../../data/services';
 import styles from './ContactSection.module.css';
 
-export default function ContactSection({ selectedService, onServiceChange }) {
+export default function ContactSection({ selectedService, onServiceChange, onOpenA11y }) {
   const { t, i18n } = useTranslation();
   const lang = i18n.language || 'he';
 
@@ -197,13 +197,29 @@ export default function ContactSection({ selectedService, onServiceChange }) {
             </div>
 
             <div className={styles.legalLinks}>
+              <button
+                type="button"
+                onClick={onOpenA11y}
+                className={styles.legalBtn}
+              >
+                <FaUniversalAccess />
+                <span>{t('a11y.title')}</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => window.dispatchEvent(new CustomEvent('openCookieSettings'))}
+                className={styles.legalBtn}
+              >
+                <FaCookieBite />
+                <span>{t('cookies.settingsLink')}</span>
+              </button>
               <a
                 href="/accessibility.html"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.legalLink}
               >
-                <FaUniversalAccess />
+                <FaExternalLinkAlt className={styles.smallIcon} />
                 <span>{t('contact.accessibility')}</span>
               </a>
               <a

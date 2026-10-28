@@ -39,3 +39,88 @@ body {
 main {
   flex: 1;
 }
+
+/* ========================================================
+   ACCESSIBILITY ENGINE STYLES (WCAG 2.1 AA & Israeli Standard 5568)
+   ======================================================== */
+
+html[data-font-size="small"] {
+  font-size: 14px;
+}
+
+html[data-font-size="medium"] {
+  font-size: 16px;
+}
+
+html[data-font-size="large"] {
+  font-size: 18.5px;
+}
+
+html[data-font-size="xlarge"] {
+  font-size: 21px;
+}
+
+/* High Contrast: Dark */
+html[data-contrast="dark"] {
+  --teal-deep: #000000;
+  --teal-dark: #060e10;
+  --teal-mid: #0b1a1f;
+  --gold-primary: #ffd54f;
+  --gold-light: #ffffff;
+  --cream: #ffffeb;
+  filter: contrast(125%);
+}
+
+html[data-contrast="dark"] body {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* Invert / Light Contrast */
+html[data-contrast="light"] {
+  filter: invert(100%) hue-rotate(180deg);
+}
+
+html[data-contrast="light"] img,
+html[data-contrast="light"] video,
+html[data-contrast="light"] svg,
+html[data-contrast="light"] iframe {
+  filter: invert(100%) hue-rotate(180deg);
+}
+
+/* Grayscale Mode */
+html[data-grayscale="true"] {
+  filter: grayscale(100%);
+}
+
+/* Highlight Links Mode */
+html[data-highlight-links="true"] a {
+  text-decoration: underline !important;
+  text-decoration-thickness: 2.5px !important;
+  background: rgba(225, 168, 115, 0.28) !important;
+  outline: 2px dashed #ffd54f !important;
+  outline-offset: 3px !important;
+  border-radius: 4px;
+}
+
+/* High-Legibility Font Mode */
+html[data-readable-font="true"] body,
+html[data-readable-font="true"] input,
+html[data-readable-font="true"] textarea,
+html[data-readable-font="true"] select,
+html[data-readable-font="true"] button {
+  font-family: Arial, "Helvetica Neue", system-ui, sans-serif !important;
+  letter-spacing: 0.04em !important;
+  line-height: 1.8 !important;
+}
+
+/* Reduced Motion Mode */
+html[data-reduce-motion="true"],
+html[data-reduce-motion="true"] *,
+html[data-reduce-motion="true"] *::before,
+html[data-reduce-motion="true"] *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
